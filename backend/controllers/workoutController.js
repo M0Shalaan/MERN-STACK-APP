@@ -47,7 +47,7 @@ const createWorkout = async (req, res) => {
       .json({ error: "Please fill in all the fields", emptyFields });
   }
 
-  // add to the database
+  // add workouts to the database
   try {
     const workout = await Workout.create({ title, load, reps });
     res.status(200).json(workout);
@@ -55,6 +55,7 @@ const createWorkout = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
 
 // delete a workout
 const deleteWorkout = async (req, res) => {
