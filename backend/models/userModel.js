@@ -6,18 +6,18 @@ const userSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
     /*unique is for not to 
     add an already registered user. */
   },
 
   password: {
     type: String,
-    required: true,
+    required: true
   },
 });
 // static signup method
-userSchema.static.signup = async function (email, password) {
+userSchema.statics.signup = async function (email, password) {
   const exists = await this.findOne({ email });
   if (exists) {
     throw Error("Email already in use");
