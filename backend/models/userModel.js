@@ -12,11 +12,13 @@ const userSchema = new Schema({
     add an already registered user. */
   },
 
+
   password: {
     type: String,
     required: true,
   },
 });
+
 
 // static signup method
 userSchema.statics.signup = async function (email, password) {

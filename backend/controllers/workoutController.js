@@ -56,7 +56,6 @@ const createWorkout = async (req, res) => {
   }
 };
 
-
 // delete a workout
 const deleteWorkout = async (req, res) => {
   const { id } = req.params;
