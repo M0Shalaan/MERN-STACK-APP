@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useEffect } from "react";
 
 export const AuthContext = createContext();
 
@@ -18,6 +18,13 @@ export const AuthContextProvider = ({ children }) => {
   const [state, dispach] = useReducer(authReducer, {
     user: null,
   });
+  // the code below holds the data when refreshing the browser
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      dispach({ type: "LOGIN", payload: user });
+    }
+  }, []);
 
   console.log("AuthContext state", state);
 
