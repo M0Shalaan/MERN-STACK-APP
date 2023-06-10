@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Signup = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = async (e) => {
@@ -8,8 +8,8 @@ const Signup = () => {
     console.log(email, password);
   };
   return (
-    <form className="signup " onSubmit={handle}>
-      <h3>Sign up</h3>
+    <form className="Login " onSubmit={handle}>
+      <h3>Login</h3>
 
       <label>Email:</label>
       <input
@@ -24,8 +24,8 @@ const Signup = () => {
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />
-      <button>Sign up</button>
+      <button>Login</button>
     </form>
   );
 };
-export default Signup;
+export default Login;
