@@ -8,7 +8,7 @@ const Login = () => {
     console.log(email, password);
   };
   return (
-    <form className="Login " onSubmit={handle}>
+    <form className="login" onSubmit={handleSubmit}>
       <h3>Login</h3>
 
       <label>Email:</label>
