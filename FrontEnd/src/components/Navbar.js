@@ -4,12 +4,12 @@ import { useAuthContext } from "../hooks/useAuthContext";
 
 const Navbar = () => {
   const { logout } = useLogout();
-
   const { user } = useAuthContext();
   const handleClick = () => {
     logout();
   };
 
+  
   return (
     <header>
       <div className="container">
