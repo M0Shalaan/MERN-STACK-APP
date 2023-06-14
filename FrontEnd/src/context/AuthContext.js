@@ -15,21 +15,21 @@ export const authReducer = (state, action) => {
 };
 
 export const AuthContextProvider = ({ children }) => {
-  const [state, dispach] = useReducer(authReducer, {
+  const [state, dispatch] = useReducer(authReducer, {
     user: null,
   });
   // the code below holds the data when refreshing the browser
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
-      dispach({ type: "LOGIN", payload: user });
+      dispatch({ type: "LOGIN", payload: user });
     }
   }, []);
 
   console.log("AuthContext state", state);
 
   return (
-    <AuthContext.Provider value={{ ...state, dispach }}>
+    <AuthContext.Provider value={{ ...state, dispatch }}>
       {children}
     </AuthContext.Provider>
   );
