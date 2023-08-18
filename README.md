@@ -2,9 +2,9 @@
 
 ## this app called workout app and it used to store your workout exercises and keep tracking your achievements.
 
-```
+
 in this app i used `jwt` for making many users signed in and to make an profile and data for every user that contains the workout data and the time when the user was added the workout.
-```
+
 
 ## This is the signup page
 
